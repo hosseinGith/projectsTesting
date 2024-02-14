@@ -74,6 +74,7 @@ main {
           text-align: center;
           width: 100%;
           max-width: 130px;
+          color: #000;
           img {
             padding: 10px;
             aspect-ratio: 16/9;
@@ -93,9 +94,16 @@ footer {
     left: 50%;
     transform: translate(-50%);
     cursor: pointer;
-    img {
-      width: 100%;
+
+    button {
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
     }
+
     input {
       display: none;
     }
@@ -128,6 +136,8 @@ footer {
     }
   }
   .shopedsCont {
+    border: 0;
+    background-color: transparent;
     position: absolute;
     left: 20%;
     bottom: 8%;

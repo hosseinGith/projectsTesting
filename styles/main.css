@@ -63,6 +63,7 @@ main section > div .boxesContainer .item {
   text-align: center;
   width: 100%;
   max-width: 130px;
+  color: #000;
 }
 main section > div .boxesContainer .item img {
   padding: 10px;
@@ -79,7 +80,12 @@ footer .qrCodeReaderCont {
   transform: translate(-50%);
   cursor: pointer;
 }
-footer .qrCodeReaderCont img {
+footer .qrCodeReaderCont button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+footer .qrCodeReaderCont button img {
   width: 100%;
 }
 footer .qrCodeReaderCont input {
@@ -113,6 +119,8 @@ footer .plusMinusBtnsCont input::-webkit-inner-spin-button {
   display: none;
 }
 footer .shopedsCont {
+  border: 0;
+  background-color: transparent;
   position: absolute;
   left: 20%;
   bottom: 8%;
