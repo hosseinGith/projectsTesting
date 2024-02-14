@@ -1,0 +1,127 @@
+@font-face {
+  font-family: DUBAI-LIGHT;
+  src: url("../assets/fonts/DUBAI-LIGHT.TTF") format("ttr");
+}
+@font-face {
+  font-family: vazir;
+  src: url("../assets/fonts/vazir/Vazir.ttf") format("ttr");
+  src: url("../assets/fonts/vazir/Vazir.woff") format("woff");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: vazir;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(#b3acac 0 40%, #fff 40% 90%, #e6e8eb 90% 100%);
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+header section > div h2 {
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  left: 50%;
+  font-size: 30px;
+  color: #fff;
+  font-weight: 100;
+  transform: translate(-50%);
+}
+
+main section > div .boxesContainer {
+  width: 90%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 400px;
+  max-height: 350px;
+  position: absolute;
+  align-items: center;
+  justify-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5058823529);
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main section > div .boxesContainer .item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 130px;
+}
+main section > div .boxesContainer .item img {
+  padding: 10px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  width: 100%;
+}
+
+footer .qrCodeReaderCont {
+  width: 60px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+}
+footer .qrCodeReaderCont img {
+  width: 100%;
+}
+footer .qrCodeReaderCont input {
+  display: none;
+}
+footer .plusMinusBtnsCont {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  transform: translate(-50%);
+}
+footer .plusMinusBtnsCont button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+footer .plusMinusBtnsCont button img {
+  width: 100%;
+}
+footer .plusMinusBtnsCont input {
+  width: 40px;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  text-align: center;
+}
+footer .plusMinusBtnsCont input::-webkit-inner-spin-button {
+  display: none;
+}
+footer .shopedsCont {
+  position: absolute;
+  left: 20%;
+  bottom: 9%;
+  transform: translate(-50%);
+  cursor: pointer;
+}
+footer .shopedsCont img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+/*# sourceMappingURL=main.css.map */
