@@ -1,0 +1,317 @@
+@font-face {
+  font-family: DUBAI-LIGHT;
+  src: url("../assets/fonts/DUBAI-LIGHT.TTF") format("ttr");
+}
+@font-face {
+  font-family: vazir;
+  src: url("../assets/fonts/vazir/Vazir.ttf") format("ttr");
+  src: url("../assets/fonts/vazir/Vazir.woff") format("woff");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: vazir;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-image: linear-gradient(#fff 0% 90%, #e6e8eb 90% 100%);
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header section {
+  background-color: #b3acac;
+}
+header section > div .headerCont {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+header section > div .headerCont .backCont a {
+  width: 100%;
+  max-width: 80px;
+  display: inline-block;
+  color: #000;
+}
+header section > div .headerCont .backCont a img {
+  width: 100%;
+}
+header section > div .headerCont .accesptContainer {
+  display: flex;
+}
+header section > div .headerCont .accesptContainer button:first-child {
+  background-color: #4bae4f;
+}
+header section > div .headerCont .accesptContainer button:last-child {
+  background-color: #e04f5f;
+}
+header section > div .headerCont .accesptContainer button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 0;
+}
+header section > div .headerCont .accesptContainer button img {
+  width: 100%;
+}
+header section > div .headerCont .plusMinusBtnsCont {
+  display: flex;
+  align-items: center;
+}
+header section > div .headerCont .plusMinusBtnsCont button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+header section > div .headerCont .plusMinusBtnsCont button img {
+  width: 100%;
+}
+header section > div .headerCont .plusMinusBtnsCont input {
+  width: 40px;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  text-align: center;
+}
+header section > div .headerCont .plusMinusBtnsCont input::-webkit-inner-spin-button {
+  display: none;
+}
+header section > div .headerCont .qrCodeCont button {
+  max-width: 80px;
+  max-height: 80px;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+}
+header section > div .headerCont .qrCodeCont button img {
+  width: 100%;
+}
+header section > div .headerCont .qrCodeCont button .pcs {
+  width: 30px;
+  height: 30px;
+  bottom: 3px;
+  right: 3px;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+main section {
+  padding: 0 5px;
+}
+main section > div .navBar {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  background-color: #009494;
+}
+main section > div .navBar ul {
+  display: flex;
+  overflow: hidden;
+  padding: 1px 6px;
+  position: relative;
+}
+main section > div .navBar ul li {
+  width: 100%;
+  text-align: center;
+}
+main section > div .navBar ul li button {
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+  font-family: vazir;
+  color: #fff;
+}
+main section > div .navBar ul li button.active {
+  color: #89ea8b;
+}
+main section > div .navBar ul li .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -10px;
+  background: #f8ed42;
+}
+main section > div .navBar ul li:first-child {
+  width: 29px;
+  flex-basis: 125px;
+}
+main section > div .navBar ul li:last-child {
+  flex-basis: 10%;
+}
+main section > div .products {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 10px 0;
+  max-height: 65vh;
+  width: 100%;
+  overflow-y: auto;
+}
+main section > div .products .item {
+  display: flex;
+  align-items: start;
+}
+main section > div .products .item .iconDropMenu {
+  padding: 10px 3px;
+  background-color: #009494;
+}
+main section > div .products .item .iconDropMenu .item {
+  width: 20px;
+  height: 20px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+main section > div .products .item .iconDropMenu .item .circle {
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  background-color: #78c1ff;
+  border-radius: 50%;
+}
+main section > div .products .item .productInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+main section > div .products .item .productInfo .productNameCont {
+  background-color: #eeeff4;
+  width: 100%;
+  display: flex;
+  color: #78c1ff;
+  font-family: vazir;
+  padding: 5px 0;
+  justify-content: start;
+  align-items: center;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+main section > div .products .item .productInfo .productNameCont .productName {
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+main section > div .products .item .productInfo .productDatas {
+  background-color: #3b3e43;
+  padding: 10px 0;
+}
+main section > div .products .item .productInfo .productDatas ul {
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  overflow: hidden;
+}
+main section > div .products .item .productInfo .productDatas ul li {
+  text-align: center;
+  width: 100%;
+  color: #fff;
+}
+main section > div .products .item .productInfo .productDatas ul li .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -10px;
+  background: #ff0000;
+}
+main section > div .products .item .productInfo .productDatas ul li:last-child {
+  flex-basis: 10%;
+}
+main section > div .products .item .productInfo .dropDownContent {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+main section > div .products .item .productInfo .dropDownContent .info {
+  width: 95%;
+  margin: 0 auto;
+  background-color: #eeeff4;
+  padding: 20px;
+  font-size: 14px;
+}
+main section > div .products .item .productInfo .dropDownContent .productPcsCont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+main section > div .products .item .productInfo .dropDownContent .item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+main section > div .products .item .productInfo .dropDownContent .item .removeBtn {
+  width: 100%;
+  max-width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+}
+main section > div .products .item .productInfo .dropDownContent .item .removeBtn img {
+  width: 100%;
+}
+main section > div .products .item.active .productInfo .dropDownContent {
+  height: 100%;
+  opacity: 1;
+}
+
+footer section > div {
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  padding: 0 10px;
+  bottom: 0;
+}
+footer section > div .footerCont {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  bottom: 0;
+}
+footer section > div .footerCont .collectProductsPrices {
+  display: flex;
+  justify-content: space-between;
+}
+footer section > div .footerCont .tools {
+  display: flex;
+  justify-content: space-between;
+}
+footer section > div .footerCont .tools button {
+  cursor: pointer;
+  width: 100%;
+  max-width: 50px;
+  background-color: transparent;
+  border: 0;
+}
+footer section > div .footerCont .tools button img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=shopeds.css.map */
