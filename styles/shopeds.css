@@ -286,6 +286,7 @@ footer section > div {
   left: 50%;
   padding: 0 10px;
   bottom: 0;
+  background-color: #e6e8eb;
 }
 footer section > div .footerCont {
   width: 100%;
