@@ -70,6 +70,8 @@ docReady(function () {
 });
 qrcodeBtn.addEventListener("click", () => {
   const select = document.querySelector("#qr-reader-results select");
+  const startBtn = document.querySelector("#qr-reader-results button");
 
   select.children[1].selected = true;
+  startBtn.click();
 });
