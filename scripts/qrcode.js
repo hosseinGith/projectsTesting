@@ -58,6 +58,7 @@ async function startSteam() {
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
+            alert(blob);
             qrCodeFun(blob);
           };
         };
