@@ -21,9 +21,7 @@ function startScan() {
 }
 startScan();
 let reqBtn = document.querySelector("#reader__camera_permission_button");
-reqBtn.addEventListener("click", () => {
-  reader.querySelector("#reader select").children[1].selected = true;
-});
+reqBtn.addEventListener("click", () => {});
 reqBtn.click();
 qrcodeBtn.addEventListener("click", () => {
   let reader = document.querySelector("#reader");

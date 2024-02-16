@@ -134,7 +134,7 @@ footer .shopedsCont img {
 }
 
 #reader {
-  display: none;
+  max-width: 100%;
 }
 #reader > div:first-child {
   display: none;

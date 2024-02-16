@@ -151,7 +151,7 @@ footer {
   }
 }
 #reader {
-  display: none;
+  max-width: 100%;
   > div:first-child {
     display: none;
   }
