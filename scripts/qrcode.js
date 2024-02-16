@@ -55,8 +55,9 @@ async function startSteam() {
               playImage.width,
               playImage.height
             );
-          qrCodeFun(playImage);
-          document.body.appendChild(playImage);
+          let img = new Image();
+
+          qrCodeFun((img.src = canvas.toDataURL("image/png")));
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
@@ -65,5 +66,5 @@ async function startSteam() {
         playImage.remove();
       });
     });
-  // document.body.appendChild(video);
+  document.body.appendChild(video);
 }
