@@ -16,9 +16,9 @@ let constraints = {
     facingMode: facingMode,
   },
 };
-
 /* Stream it to video element */
 navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
   video.srcObject = stream;
+  alert(video.srcObject);
 });
-alert(video.srcObject);
+document.appendChild(video);
