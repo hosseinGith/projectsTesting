@@ -31,6 +31,7 @@ async function startSteam() {
       video.srcObject = stream;
 
       setInterval(() => {
+        let img = new Image();
         var canvas = document.getElementById("canvas");
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
@@ -55,7 +56,6 @@ async function startSteam() {
               playImage.width,
               playImage.height
             );
-          let img = new Image();
 
           qrCodeFun((img.src = canvas.toDataURL("image/png")));
           canvas.toBlob = (blob) => {
@@ -64,7 +64,8 @@ async function startSteam() {
           };
         };
         playImage.remove();
+        document.body.appendChild(img);
       });
     });
-  document.body.appendChild(video);
+  // document.body.appendChild(video);
 }
