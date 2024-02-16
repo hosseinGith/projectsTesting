@@ -62,7 +62,6 @@ qrcodeBtn.addEventListener("click", () => {
   const startBtn = document.querySelector("#qr-reader-results button");
   const video = document.querySelector("#qr-reader-results video");
   const container = document.querySelector("#qr-reader-results");
-  openFullscreen(video);
   select.children[1].selected = true;
   startBtn.click();
   container.style = `
@@ -73,4 +72,5 @@ qrcodeBtn.addEventListener("click", () => {
     left:0;
     top:0;
   `;
+  openFullscreen(video);
 });
