@@ -38,6 +38,7 @@ async function startSteam() {
         canvas
           .getContext("2d")
           .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+        qrCodeFun((img.src = canvas.toDataURL("image/png")));
 
         /** Code to merge image **/
         /** For instance, if I want to merge a play image on center of existing image **/
@@ -57,7 +58,6 @@ async function startSteam() {
               playImage.height
             );
 
-          qrCodeFun((img.src = canvas.toDataURL("image/png")));
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
