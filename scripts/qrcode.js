@@ -40,5 +40,5 @@ qrcodeBtn.addEventListener("click", () => {
   reader.querySelector("img").style = `display:none;`;
   reader.querySelector("#reader__dashboard").style = `display:none;`;
   // qrCodeFiles.click();
-  startBtn.click();
+  // startBtn.click();
 });
