@@ -36,6 +36,6 @@ startScan();
 
 qrcodeBtn.addEventListener("click", () => {
   let reqBtn = document.querySelector("#reader__camera_permission_button");
-  qrCodeFiles.click();
+  // qrCodeFiles.click();
   reqBtn.click();
 });
