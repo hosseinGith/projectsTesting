@@ -17,8 +17,9 @@ function openFullscreen(elem) {
 }
 scanCloseBtn.addEventListener("click", () => {
   document.querySelector("#reader").style.display = "none";
+  document.querySelector("#reader video").remove();
   clearInterval(interValStream);
-  interValStream = false;
+  interValStream = null;
 });
 
 function qrCodeFun(img) {
