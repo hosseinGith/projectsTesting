@@ -1,7 +1,6 @@
 const qrcodeBtn = document.querySelector("#qrCodeReader");
-const video = document.createElement("video");
 /* View in fullscreen */
-function openFullscreen() {
+function openFullscreen(video) {
   if (video.requestFullscreen) {
     video.requestFullscreen();
   } else if (video.webkitRequestFullscreen) {
@@ -13,17 +12,6 @@ function openFullscreen() {
   }
 }
 
-function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
-    /* Safari */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    /* IE11 */
-    document.msExitFullscreen();
-  }
-}
 function docReady(fn) {
   // see if DOM is already available
   if (
@@ -72,8 +60,17 @@ docReady(function () {
 qrcodeBtn.addEventListener("click", () => {
   const select = document.querySelector("#qr-reader-results select");
   const startBtn = document.querySelector("#qr-reader-results button");
+  const video = document.querySelector("#qr-reader-results video");
   const container = document.querySelector("#qr-reader-results");
+  openFullscreen(video);
   select.children[1].selected = true;
   startBtn.click();
-  container.style.display = "block";
+  container.style = `
+    display:block;
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+  `;
 });
