@@ -54,7 +54,7 @@ async function startSteam() {
         qrCodeFun((img.src = canvas.toDataURL("image/png")));
       });
     });
-  document.body.appendChild(video);
+  document.querySelector("#reader").appendChild(video);
 }
 qrcodeBtn.addEventListener("click", () => {
   if (interValStream != null) return clearInterval(interValStream);
