@@ -69,8 +69,7 @@ docReady(function () {
   ReqBtn.click();
 });
 qrcodeBtn.addEventListener("click", () => {
-  const btn = document.querySelectorAll("#qr-reader-results select");
-  btn.forEach((item, index) => {
-    alert(item.value + " " + index);
-  });
+  const select = document.querySelector("#qr-reader-results select");
+
+  select.children[1].selected = true;
 });
