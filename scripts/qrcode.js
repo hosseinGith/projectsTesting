@@ -31,6 +31,7 @@ async function startSteam() {
     .then(function success(stream) {
       video.srcObject = stream;
       setInterval(() => {
+        alert(capture(video));
         qrCodeFun(capture(video));
       });
     });
