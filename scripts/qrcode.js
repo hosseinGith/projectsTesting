@@ -16,12 +16,15 @@ function startScan() {
     disableFlip: true,
   });
   html5QrcodeScanner.render(onScanSuccess, onScanError);
-  reader.querySelector("#reader select").children[1].selected = true;
+  // setTimeout(() => {
+  // }, 1000);
 }
 startScan();
-
 let reqBtn = document.querySelector("#reader__camera_permission_button");
 reqBtn.click();
+reqBtn.addEventListener("click", () => {
+  reader.querySelector("#reader select").children[1].selected = true;
+});
 qrcodeBtn.addEventListener("click", () => {
   let reader = document.querySelector("#reader");
   console.log(reader.style);
