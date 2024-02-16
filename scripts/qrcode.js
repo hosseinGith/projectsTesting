@@ -57,7 +57,8 @@ function capture(video) {
       .drawImage(playImage, startX, startY, playImage.width, playImage.height);
     canvas.toBlob = (blob) => {
       const img = new Image();
-      return (img.src = window.URL.createObjectUrl(blob));
+      img.src = window.URL.createObjectUrl(blob);
+      return img;
     };
   };
   /** End **/
