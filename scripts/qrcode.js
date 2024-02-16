@@ -3,7 +3,7 @@ const qrcodeBtn = document.querySelector("#qrCodeReader");
 
 qrcodeBtn.addEventListener("click", () => {});
 
-function startSteam() {
+async function startSteam() {
   let video = document.createElement("video");
   video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
