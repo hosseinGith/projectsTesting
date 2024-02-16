@@ -343,3 +343,8 @@ footer {
     }
   }
 }
+@media screen and (width<500px) {
+  body {
+    overflow-y: hidden;
+  }
+}

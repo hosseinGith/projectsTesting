@@ -313,4 +313,10 @@ footer section > div .footerCont .tools button img {
   width: 100%;
 }
 
+@media screen and (width < 500px) {
+  body {
+    overflow-y: hidden;
+  }
+}
+
 /*# sourceMappingURL=shopeds.css.map */
