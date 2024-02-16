@@ -18,11 +18,7 @@
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(
-    #b3acac 0 40%,
-    #fff 40% 90%,
-    #e6e8eb 90% 100%
-  );
+  background-image: linear-gradient(#b3acac 0 40%, #fff 40% 90%, #e6e8eb 90% 100%);
 }
 
 .container {
@@ -108,8 +104,6 @@ footer .plusMinusBtnsCont button {
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: transparent;
-  border: 0;
 }
 footer .plusMinusBtnsCont button img {
   width: 100%;
@@ -139,4 +133,4 @@ footer .shopedsCont img {
   object-fit: contain;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=home.css.map */

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/home.css" />
+    <script src="scripts/qcode-decoder.min.js"></script>
+    <script src="scripts/utf8.js"></script>
     <title>خانه / Home</title>
   </head>
   <body>
@@ -66,7 +68,7 @@
             <button id="qrCodeReader">
               <img src="assets/images/11.png" alt="qrCodeReader" />
             </button>
-            <input type="file" disabled />
+            <input id="qrCodeFiles" type="file" accept="image/*" />
           </div>
           <div class="plusMinusBtnsCont">
             <button id="minus">
@@ -81,10 +83,8 @@
         </div>
       </section>
     </footer>
-    <script src="scripts/qcode-decoder.min.js"></script>
-    <script src="scripts/utf8.js"></script>
-    <script src="scripts/html5-qrcode.min.js"></script>
-    <script src="scripts/qrcode.js"></script>
+
+    <script src="scripts/qrcode.js" defer></script>
     <script src="scripts/home.js"></script>
   </body>
 </html>
