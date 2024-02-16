@@ -39,6 +39,7 @@ async function startSteam() {
 }
 function capture(video) {
   var canvas = document.getElementById("canvas");
+  let bloba;
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas
@@ -49,18 +50,19 @@ function capture(video) {
   /** For instance, if I want to merge a play image on center of existing image **/
   const playImage = new Image();
   playImage.src = "path to image asset";
-  return (playImage.onload = () => {
+  playImage.onload = () => {
     const startX = video.videoWidth / 2 - playImage.width / 2;
     const startY = video.videoHeight / 2 - playImage.height / 2;
     canvas
       .getContext("2d")
       .drawImage(playImage, startX, startY, playImage.width, playImage.height);
-    return (canvas.toBlob = (blob) => {
+    canvas.toBlob = (blob) => {
       const img = new Image();
       img.src = window.URL.createObjectUrl(blob);
-      return blob;
-    });
-  });
+      bloba = blob;
+    };
+  };
+  return bloba;
   /** End **/
 }
 
