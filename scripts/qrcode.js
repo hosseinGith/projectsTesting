@@ -34,7 +34,6 @@ function docReady(fn) {
     setTimeout(fn, 1);
   } else {
     document.addEventListener("DOMContentLoaded", fn);
-    ReqBtn.click();
   }
 }
 docReady(function () {
@@ -64,11 +63,14 @@ docReady(function () {
   }
 
   html5QrcodeScanner.render(onScanSuccess, onScanError);
-});
-qrcodeBtn.addEventListener("click", () => {
   const ReqBtn = document.querySelector(
     "#qr-reader-results__camera_permission_button"
   );
-  //   const reqSelect = document.querySelector("qr-reader-results select");
-  //   alert(reqSelect.value);
+  ReqBtn.click();
+});
+qrcodeBtn.addEventListener("click", () => {
+  const btn = document.querySelectorAll("#qr-reader-results button");
+  btn.forEach((item, index) => {
+    alert(item.value + " " + index);
+  });
 });
