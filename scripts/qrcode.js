@@ -59,16 +59,16 @@ docReady(function () {
   // Optional callback for error, can be ignored.
   function onScanError(qrCodeError) {
     // This callback would be called in case of qr code scan error or setup error.
-    console.log(qrCodeError);
     // You can avoid this callback completely, as it can be very verbose in nature.
   }
 
-  console.log(1);
   html5QrcodeScanner.render(onScanSuccess, onScanError);
 });
 qrcodeBtn.addEventListener("click", () => {
   const ReqBtn = document.querySelector(
     "#qr-reader-results__camera_permission_button"
   );
+  const reqSelect = document.querySelector("qr-reader-results select");
+  alert(reqSelect.value);
   ReqBtn.click();
 });
