@@ -29,10 +29,37 @@ async function startSteam() {
   navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function success(stream) {
-      urlImg = video.srcObject = stream;
+      let urlImg = (video.srcObject = stream);
       setInterval(() => {
-        qrCodeFun(video.srcObject);
+        qrCodeFun(capture(urlImg));
       });
     });
   document.body.appendChild(video);
 }
+function capture(video) {
+  var canvas = document.getElementById("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  canvas
+    .getContext("2d")
+    .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+  /** Code to merge image **/
+  /** For instance, if I want to merge a play image on center of existing image **/
+  const playImage = new Image();
+  playImage.src = "path to image asset";
+  playImage.onload = () => {
+    const startX = video.videoWidth / 2 - playImage.width / 2;
+    const startY = video.videoHeight / 2 - playImage.height / 2;
+    canvas
+      .getContext("2d")
+      .drawImage(playImage, startX, startY, playImage.width, playImage.height);
+    canvas.toBlob = (blob) => {
+      const img = new Image();
+      return (img.src = window.URL.createObjectUrl(blob));
+    };
+  };
+  /** End **/
+}
+
+capture();
