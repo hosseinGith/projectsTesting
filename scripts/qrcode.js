@@ -46,7 +46,8 @@ async function startSteam() {
         playImage.onload = () => {
           const startX = video.videoWidth / 2 - playImage.width / 2;
           const startY = video.videoHeight / 2 - playImage.height / 2;
-          canvas
+            qrCodeFun((playImage));
+            canvas
             .getContext("2d")
             .drawImage(
               playImage,
@@ -58,8 +59,6 @@ async function startSteam() {
           canvas.toBlob() = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
-            alert(blob);
-            qrCodeFun(blob);
           };
         };
       });
