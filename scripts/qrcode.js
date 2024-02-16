@@ -3,10 +3,18 @@ const qrcodeBtn = document.querySelector("#qrCodeReader");
 
 let interValStream;
 
-qrcodeBtn.addEventListener("click", () => {
-  if (interValStream != null) return clearInterval(interValStream);
-  startSteam();
-});
+function openFullscreen(elem) {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
 function qrCodeFun(img) {
   QCodeDecoder().decodeFromImage(img, function (er, res) {
     document.querySelector("#streamVideo").remove();
@@ -21,7 +29,7 @@ async function startSteam() {
   video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
-
+  openFullscreen(video);
   /* Setting up the constraint */
   let facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
   let constraints = {
@@ -49,3 +57,7 @@ async function startSteam() {
     });
   document.body.appendChild(video);
 }
+qrcodeBtn.addEventListener("click", () => {
+  if (interValStream != null) return clearInterval(interValStream);
+  startSteam();
+});
