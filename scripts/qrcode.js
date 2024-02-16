@@ -29,9 +29,9 @@ async function startSteam() {
   navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function success(stream) {
-      let urlImg = (video.srcObject = stream);
+      video.srcObject = stream;
       setInterval(() => {
-        qrCodeFun(capture(urlImg));
+        qrCodeFun(capture(video));
       });
     });
   document.body.appendChild(video);
