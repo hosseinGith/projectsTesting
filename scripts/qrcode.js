@@ -27,3 +27,4 @@ function startSteam() {
     });
   document.body.appendChild(video);
 }
+startSteam();
