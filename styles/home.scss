@@ -158,34 +158,12 @@ footer {
   display: none;
   left: 0;
   background-color: #000000;
-  .scaning {
-    width: 80%;
-    max-width: 400px;
-    height: 40%;
-    top: 50%;
-    left: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    transform-style: preserve-3d;
-    .scanLine {
-      z-index: 1000;
+  #scanCloseBtn {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    img {
       width: 100%;
-      max-width: 10px;
-      position: absolute;
-      left: 0;
-      background-color: #0066ff60;
-      box-shadow: 0 0 100px #0077ff, 0 0 80px #0077ff, 0 0 40px #0077ff6e;
-      height: 100%;
-      animation: scaning 1s linear alternate infinite;
-      transform: translateX(0);
-    }
-  }
-  @keyframes scaning {
-    0% {
-      transform: translateX(0) perspective(300px);
-    }
-    100% {
-      transform: translateX(2500%) perspective(300px);
     }
   }
   video {

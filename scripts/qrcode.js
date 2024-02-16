@@ -1,5 +1,6 @@
 const qrCodeFiles = document.querySelector("#qrCodeFiles");
 const qrcodeBtn = document.querySelector("#qrCodeReader");
+const scanCloseBtn = document.querySelector("#scanCloseBtn");
 
 let interValStream;
 
@@ -14,6 +15,11 @@ function openFullscreen(elem) {
     elem.msRequestFullscreen();
   }
 }
+scanCloseBtn.addEventListener("click", () => {
+  document.querySelector("#reader").style.display = "none";
+  clearInterval(interValStream);
+  interValStream = false;
+});
 
 function qrCodeFun(img) {
   QCodeDecoder().decodeFromImage(img, function (er, res) {

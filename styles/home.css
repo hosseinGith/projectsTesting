@@ -142,35 +142,13 @@ footer .shopedsCont img {
   left: 0;
   background-color: #000000;
 }
-#reader .scaning {
-  width: 80%;
-  max-width: 400px;
-  height: 40%;
-  top: 50%;
-  left: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  transform-style: preserve-3d;
+#reader #scanCloseBtn {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
 }
-#reader .scaning .scanLine {
-  z-index: 1000;
+#reader #scanCloseBtn img {
   width: 100%;
-  max-width: 10px;
-  position: absolute;
-  left: 0;
-  background-color: rgba(0, 102, 255, 0.3764705882);
-  box-shadow: 0 0 100px #0077ff, 0 0 80px #0077ff, 0 0 40px rgba(0, 119, 255, 0.431372549);
-  height: 100%;
-  animation: scaning 1s linear alternate infinite;
-  transform: translateX(0);
-}
-@keyframes scaning {
-  0% {
-    transform: translateX(0) perspective(300px);
-  }
-  100% {
-    transform: translateX(2500%) perspective(300px);
-  }
 }
 #reader video {
   z-index: 0;
