@@ -1,44 +1,24 @@
 const qrCodeFiles = document.querySelector("#qrCodeFiles");
 const qrcodeBtn = document.querySelector("#qrCodeReader");
 
-function startScan() {
-  function onScanSuccess(decodedText, decodedResult) {
-    let reader = document.querySelector("#reader");
-    reader.querySelector("#reader select").style = `display:none;`;
-    alert(decodedText, decodedResult);
-    reader.querySelector("video").controls = false;
-  }
-  function onScanError(errorMessage) {}
+qrcodeBtn.addEventListener("click", () => {});
+let video = document.createElement("video");
+video.setAttribute("playsinline", "");
+video.setAttribute("autoplay", "");
+video.setAttribute("muted", "");
+video.style = "width:100%;height:100%;position:fixed;top:0;left:0";
 
-  var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-    fps: 10,
-    qrbox: 250,
-    disableFlip: true,
-  });
-  html5QrcodeScanner.render(onScanSuccess, onScanError);
-  // setTimeout(() => {
-  // }, 1000);
-}
-startScan();
-let reqBtn = document.querySelector("#reader__camera_permission_button");
+/* Setting up the constraint */
+let facingMode = "user"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
+let constraints = {
+  audio: false,
+  video: {
+    facingMode: facingMode,
+  },
+};
 
-reqBtn.click();
-qrcodeBtn.addEventListener("click", () => {
-  let reader = document.querySelector("#reader");
-  console.log(reader.style);
-  let startBtn = document.querySelector("#reader button");
-  reader.style.position = "fixed";
-  reader.style.display = "block";
-  reader.style.width = " 100%";
-  reader.style.height = " 100%";
-  reader.style.border = 0;
-  reader.querySelectorAll("button").forEach((item, index) => {
-    item.style = `display:none;`;
-  });
-
-  reader.querySelector("div:first-child").style = `display:none;`;
-  reader.querySelector("img").style = `display:none;`;
-  reader.querySelector("#reader__dashboard").style = `display:none;`;
-  // qrCodeFiles.click();
-  // startBtn.click();
+/* Stream it to video element */
+navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
+  video.srcObject = stream;
 });
+alert(video.srcObject);
