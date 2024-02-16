@@ -34,6 +34,7 @@ function docReady(fn) {
     setTimeout(fn, 1);
   } else {
     document.addEventListener("DOMContentLoaded", fn);
+    ReqBtn.click();
   }
 }
 docReady(function () {
@@ -70,5 +71,4 @@ qrcodeBtn.addEventListener("click", () => {
   );
   //   const reqSelect = document.querySelector("qr-reader-results select");
   //   alert(reqSelect.value);
-  ReqBtn.click();
 });
