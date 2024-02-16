@@ -4,8 +4,7 @@ const qrcodeBtn = document.querySelector("#qrCodeReader");
 function startScan() {
   function onScanSuccess(decodedText, decodedResult) {
     let reader = document.querySelector("#reader");
-    reader.querySelector("select").style = `display:none;`;
-    reader.querySelector("select").children[1].selected = true;
+    reader.querySelector("#reader select").style = `display:none;`;
     alert(decodedText, decodedResult);
     reader.querySelector("video").controls = false;
   }
@@ -17,6 +16,7 @@ function startScan() {
     disableFlip: true,
   });
   html5QrcodeScanner.render(onScanSuccess, onScanError);
+  reader.querySelector("#reader select").children[1].selected = true;
 }
 startScan();
 
