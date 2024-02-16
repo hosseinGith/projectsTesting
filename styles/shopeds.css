@@ -17,9 +17,12 @@
 }
 
 body {
+  display: grid;
   min-height: 100vh;
-  position: relative;
-  background-image: linear-gradient(#fff 0% 90%, #e6e8eb 90% 100%);
+  width: 100vw;
+  grid-template-columns: 100%;
+  grid-template-rows: 15vh 70vh 15vh;
+  background-image: linear-gradient(#b3acac 0 15vh, #fff 15vh 85vh, #e6e8eb 85vh 100vw);
 }
 
 .container {
@@ -27,9 +30,6 @@ body {
   margin: 0 auto;
 }
 
-header section {
-  background-color: #b3acac;
-}
 header section > div .headerCont {
   padding: 10px 15px;
   display: flex;
@@ -111,6 +111,9 @@ header section > div .headerCont .qrCodeCont button .pcs {
   background-color: #fff;
 }
 
+main {
+  overflow: hidden;
+}
 main section {
   padding: 0 5px;
 }
@@ -169,6 +172,9 @@ main section > div .products {
 main section > div .products .item {
   display: flex;
   align-items: start;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 main section > div .products .item .iconDropMenu {
   padding: 10px 3px;
@@ -256,12 +262,7 @@ main section > div .products .item .productInfo .dropDownContent .productPcsCont
   justify-content: space-between;
   font-size: 13px;
 }
-main section > div .products .item .productInfo .dropDownContent .item {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-main section > div .products .item .productInfo .dropDownContent .item .removeBtn {
+main section > div .products .item .removeBtn {
   width: 100%;
   max-width: 60px;
   height: 80px;
@@ -271,7 +272,7 @@ main section > div .products .item .productInfo .dropDownContent .item .removeBt
   background-color: transparent;
   border: 0;
 }
-main section > div .products .item .productInfo .dropDownContent .item .removeBtn img {
+main section > div .products .item .removeBtn img {
   width: 100%;
 }
 main section > div .products .item.active .productInfo .dropDownContent {
@@ -281,12 +282,9 @@ main section > div .products .item.active .productInfo .dropDownContent {
 
 footer section > div {
   width: 100%;
-  position: absolute;
-  transform: translate(-50%);
   left: 50%;
   padding: 0 10px;
   bottom: 0;
-  background-color: #e6e8eb;
 }
 footer section > div .footerCont {
   width: 100%;

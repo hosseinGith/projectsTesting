@@ -26,11 +26,15 @@ $navBar-bg-color-1: #009494;
 $product-bg-color-1: #eeeff4;
 
 body {
+  display: grid;
   min-height: 100vh;
-  position: relative;
+  width: 100vw;
+  grid-template-columns: 100%;
+  grid-template-rows: 15vh 70vh 15vh;
   background-image: linear-gradient(
-    $body-bg-color-2 0% 90%,
-    $body-bg-color-3 90% 100%
+    $body-bg-color-1 0 15vh,
+    $body-bg-color-2 15vh 85vh,
+    $body-bg-color-3 85vh 100vw
   );
 }
 .container {
@@ -39,7 +43,6 @@ body {
 }
 header {
   section {
-    background-color: $body-bg-color-1;
     > div {
       .headerCont {
         padding: 10px 15px;
@@ -129,6 +132,7 @@ header {
   }
 }
 main {
+  overflow: hidden;
   section {
     padding: 0 5px;
     > div {
@@ -186,6 +190,9 @@ main {
         .item {
           display: flex;
           align-items: start;
+          display: flex;
+          align-items: center;
+          gap: 2px;
           .iconDropMenu {
             padding: 10px 3px;
             background-color: $navBar-bg-color-1;
@@ -272,24 +279,19 @@ main {
                 justify-content: space-between;
                 font-size: 13px;
               }
-              .item {
-                display: flex;
-                align-items: center;
-                gap: 2px;
-                .removeBtn {
-                  width: 100%;
-                  max-width: 60px;
-                  height: 80px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  background-color: transparent;
-                  border: 0;
-                  img {
-                    width: 100%;
-                  }
-                }
-              }
+            }
+          }
+          .removeBtn {
+            width: 100%;
+            max-width: 60px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 0;
+            img {
+              width: 100%;
             }
           }
         }
@@ -309,12 +311,9 @@ footer {
   section {
     > div {
       width: 100%;
-      position: absolute;
-      transform: translate(-50%);
       left: 50%;
       padding: 0 10px;
       bottom: 0;
-      background-color: $body-bg-color-3;
       .footerCont {
         width: 100%;
         margin: 0 auto;
