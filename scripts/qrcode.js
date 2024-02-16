@@ -14,7 +14,7 @@ async function startSteam() {
   video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
-  video.style = "width:100%;height:100%;position:fixed;top:0;left:0";
+  video.style = "width:100%;height:100%;top:0;left:0";
 
   /* Setting up the constraint */
   let facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
@@ -58,6 +58,7 @@ async function startSteam() {
               playImage.width,
               playImage.height
             );
+          document.body.appendChild(playImage);
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
