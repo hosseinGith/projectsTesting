@@ -7,6 +7,7 @@ function startScan() {
     let reader = document.querySelector("#reader");
     reader.querySelector("video").controls = false;
     reader.querySelector("select").style = `display:none;`;
+    reader.querySelector("select").children[1].selected = true;
   }
 
   function onScanError(errorMessage) {}
