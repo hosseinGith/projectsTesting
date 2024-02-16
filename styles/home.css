@@ -133,4 +133,21 @@ footer .shopedsCont img {
   object-fit: contain;
 }
 
+#reader {
+  display: none;
+}
+#reader > div:first-child {
+  display: none;
+}
+#reader img {
+  display: none;
+}
+#reader #reader__dashboard {
+  display: none;
+}
+#reader video {
+  width: 100%;
+  height: 100%;
+}
+
 /*# sourceMappingURL=home.css.map */
