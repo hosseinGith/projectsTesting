@@ -11,7 +11,7 @@ async function startSteam() {
   video.style = "width:100%;height:100%;position:fixed;top:0;left:0";
 
   /* Setting up the constraint */
-  let facingMode = "user"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
+  let facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
   let constraints = {
     audio: false,
     video: {
