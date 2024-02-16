@@ -48,9 +48,10 @@ docReady(function () {
   function onScanSuccess(decodedText, decodedResult) {
     if (decodedText !== lastResult) {
       ++countResults;
-
+      resultContainer.style.display = "none";
       lastResult = decodedText;
-      resultContainer.innerHTML += `<div>[${countResults}] - ${decodedText}</div>`;
+      alert(countResults);
+      alert(decodedText);
       // Optional: To close the QR code scannign after the result is found
       html5QrcodeScanner.clear();
     }
@@ -71,7 +72,8 @@ docReady(function () {
 qrcodeBtn.addEventListener("click", () => {
   const select = document.querySelector("#qr-reader-results select");
   const startBtn = document.querySelector("#qr-reader-results button");
-
+  const container = document.querySelector("#qr-reader-results");
   select.children[1].selected = true;
   startBtn.click();
+  container.style.display = "block";
 });
