@@ -21,9 +21,7 @@ function startScan() {
     reqBtn.querySelector("#reader__dashboard").style = `display:none;`;
   }
 
-  function onScanError(errorMessage) {
-    alert("error");
-  }
+  function onScanError(errorMessage) {}
 
   var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
     fps: 10,
