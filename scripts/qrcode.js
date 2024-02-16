@@ -27,6 +27,7 @@ qrcodeBtn.addEventListener("click", () => {
   console.log(reader.style);
   let startBtn = document.querySelector("#reader button");
   reader.style.position = "fixed";
+  reader.style.display = "block";
   reader.style.width = " 100%";
   reader.style.height = " 100%";
   reader.style.border = 0;
