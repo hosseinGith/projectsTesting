@@ -1,16 +1,23 @@
 const qrCodeFiles = document.querySelector("#qrCodeFiles");
 const qrcodeBtn = document.querySelector("#qrCodeReader");
 
+let interValStream;
+
 qrcodeBtn.addEventListener("click", () => {
+  if (interValStream != null) return clearInterval(interValStream);
   startSteam();
 });
 function qrCodeFun(img) {
   QCodeDecoder().decodeFromImage(img, function (er, res) {
+    document.querySelector("#streamVideo").remove();
+    clearInterval(interValStream);
+    interValStream = null;
     alert(utf8.decode(res));
   });
 }
 async function startSteam() {
   let video = document.createElement("video");
+  video.id = "streamVideo";
   video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
@@ -29,8 +36,7 @@ async function startSteam() {
     .getUserMedia(constraints)
     .then(function success(stream) {
       video.srcObject = stream;
-
-      setInterval(() => {
+      interValStream = setInterval(() => {
         let img = new Image();
         var canvas = document.getElementById("canvas");
         canvas.width = video.videoWidth;
@@ -39,31 +45,6 @@ async function startSteam() {
           .getContext("2d")
           .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
         qrCodeFun((img.src = canvas.toDataURL("image/png")));
-
-        /** Code to merge image **/
-        /** For instance, if I want to merge a play image on center of existing image **/
-        const playImage = new Image();
-        playImage.src = "path to image asset";
-        playImage.onload = () => {
-          const startX = video.videoWidth / 2 - playImage.width / 2;
-          const startY = video.videoHeight / 2 - playImage.height / 2;
-
-          canvas
-            .getContext("2d")
-            .drawImage(
-              playImage,
-              startX,
-              startY,
-              playImage.width,
-              playImage.height
-            );
-
-          canvas.toBlob = (blob) => {
-            const img = new Image();
-            img.src = window.URL.createObjectUrl(blob);
-          };
-        };
-        playImage.remove();
       });
     });
   document.body.appendChild(video);
