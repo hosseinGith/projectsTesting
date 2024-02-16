@@ -54,6 +54,7 @@ async function startSteam() {
         qrCodeFun((img.src = canvas.toDataURL("image/png")));
       });
     });
+  document.querySelector("#reader").style.display = "block";
   document.querySelector("#reader").appendChild(video);
 }
 qrcodeBtn.addEventListener("click", () => {

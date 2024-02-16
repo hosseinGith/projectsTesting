@@ -138,6 +138,7 @@ footer .shopedsCont img {
   height: 100%;
   position: fixed;
   top: 0;
+  display: none;
   left: 0;
   background-color: #000000;
 }
