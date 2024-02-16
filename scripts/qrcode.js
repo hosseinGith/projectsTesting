@@ -42,7 +42,6 @@ async function startSteam() {
         /** For instance, if I want to merge a play image on center of existing image **/
         const playImage = new Image();
         playImage.src = "path to image asset";
-        qrCodeFun(playImage.src);
         playImage.onload = () => {
           const startX = video.videoWidth / 2 - playImage.width / 2;
           const startY = video.videoHeight / 2 - playImage.height / 2;
@@ -56,13 +55,15 @@ async function startSteam() {
               playImage.width,
               playImage.height
             );
+          qrCodeFun(playImage);
           document.body.appendChild(playImage);
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
           };
         };
+        playImage.remove();
       });
     });
-  document.body.appendChild(video);
+  // document.body.appendChild(video);
 }
