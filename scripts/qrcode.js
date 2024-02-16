@@ -29,7 +29,6 @@ async function startSteam() {
   video.setAttribute("playsinline", "");
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
-  openFullscreen(video);
   /* Setting up the constraint */
   let facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
   let constraints = {
