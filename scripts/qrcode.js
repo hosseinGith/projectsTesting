@@ -55,7 +55,7 @@ async function startSteam() {
               playImage.width,
               playImage.height
             );
-          canvas.toBlob = (blob) => {
+          canvas.toBlob() = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
             alert(blob);
