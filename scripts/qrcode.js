@@ -3,10 +3,10 @@ const qrcodeBtn = document.querySelector("#qrCodeReader");
 
 function startScan() {
   function onScanSuccess(decodedText, decodedResult) {
+    let reader = document.querySelector("#reader");
     reader.querySelector("select").style = `display:none;`;
     reader.querySelector("select").children[1].selected = true;
     alert(decodedText, decodedResult);
-    let reader = document.querySelector("#reader");
     reader.querySelector("video").controls = false;
   }
   function onScanError(errorMessage) {}
