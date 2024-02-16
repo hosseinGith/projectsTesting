@@ -33,7 +33,6 @@ async function startSteam() {
 
       setInterval(() => {
         var canvas = document.getElementById("canvas");
-        let bloba;
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         canvas
@@ -59,15 +58,10 @@ async function startSteam() {
           canvas.toBlob = (blob) => {
             const img = new Image();
             img.src = window.URL.createObjectUrl(blob);
-            bloba = blob;
+            qrCodeFun(blob);
           };
         };
       });
     });
   document.body.appendChild(video);
 }
-function capture(video) {
-  /** End **/
-}
-
-capture();
