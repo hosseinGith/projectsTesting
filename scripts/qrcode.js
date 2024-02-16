@@ -17,9 +17,9 @@ function openFullscreen(elem) {
 
 function qrCodeFun(img) {
   QCodeDecoder().decodeFromImage(img, function (er, res) {
-    document.querySelector("#streamVideo").remove();
-    clearInterval(interValStream);
-    interValStream = null;
+    // document.querySelector("#streamVideo").remove();
+    // clearInterval(interValStream);
+    // interValStream = null;
     alert(utf8.decode(res));
   });
 }
