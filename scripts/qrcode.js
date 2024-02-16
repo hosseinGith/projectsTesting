@@ -64,8 +64,7 @@ async function startSteam() {
           };
         };
         playImage.remove();
-        document.body.appendChild(img);
       });
     });
-  // document.body.appendChild(video);
+  document.body.appendChild(video);
 }
