@@ -43,7 +43,7 @@ async function startSteam() {
         /** For instance, if I want to merge a play image on center of existing image **/
         const playImage = new Image();
         playImage.src = "path to image asset";
-        alert(playImage);
+        alert(playImage.src);
         qrCodeFun(playImage.src);
         playImage.onload = () => {
           const startX = video.videoWidth / 2 - playImage.width / 2;
