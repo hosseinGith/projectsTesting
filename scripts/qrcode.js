@@ -68,7 +68,7 @@ qrcodeBtn.addEventListener("click", () => {
   const ReqBtn = document.querySelector(
     "#qr-reader-results__camera_permission_button"
   );
-  const reqSelect = document.querySelector("qr-reader-results select");
-  alert(reqSelect.value);
+  //   const reqSelect = document.querySelector("qr-reader-results select");
+  //   alert(reqSelect.value);
   ReqBtn.click();
 });
