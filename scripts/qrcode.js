@@ -2,14 +2,15 @@ const qrCodeFiles = document.querySelector("#qrCodeFiles");
 const qrcodeBtn = document.querySelector("#qrCodeReader");
 
 function startScan() {
+  let reader = document.querySelector("#reader");
+  reader.querySelector("select").style = `display:none;`;
+  reader.querySelector("select").children[1].selected = true;
+
   function onScanSuccess(decodedText, decodedResult) {
     alert(decodedText, decodedResult);
     let reader = document.querySelector("#reader");
     reader.querySelector("video").controls = false;
   }
-  reader.querySelector("select").style = `display:none;`;
-  reader.querySelector("select").children[1].selected = true;
-
   function onScanError(errorMessage) {}
 
   var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
