@@ -44,7 +44,7 @@ async function startSteam() {
         const playImage = new Image();
         playImage.src = "path to image asset";
         alert(playImage);
-        qrCodeFun(playImage);
+        qrCodeFun(playImage.src);
         playImage.onload = () => {
           const startX = video.videoWidth / 2 - playImage.width / 2;
           const startY = video.videoHeight / 2 - playImage.height / 2;
