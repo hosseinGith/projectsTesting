@@ -30,39 +30,43 @@ async function startSteam() {
     .getUserMedia(constraints)
     .then(function success(stream) {
       video.srcObject = stream;
+
       setInterval(() => {
-        alert(capture(video));
-        qrCodeFun(capture(video));
+        var canvas = document.getElementById("canvas");
+        let bloba;
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas
+          .getContext("2d")
+          .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+        /** Code to merge image **/
+        /** For instance, if I want to merge a play image on center of existing image **/
+        const playImage = new Image();
+        playImage.src = "path to image asset";
+        playImage.onload = () => {
+          const startX = video.videoWidth / 2 - playImage.width / 2;
+          const startY = video.videoHeight / 2 - playImage.height / 2;
+          canvas
+            .getContext("2d")
+            .drawImage(
+              playImage,
+              startX,
+              startY,
+              playImage.width,
+              playImage.height
+            );
+          canvas.toBlob = (blob) => {
+            const img = new Image();
+            img.src = window.URL.createObjectUrl(blob);
+            bloba = blob;
+          };
+        };
       });
     });
   document.body.appendChild(video);
 }
 function capture(video) {
-  var canvas = document.getElementById("canvas");
-  let bloba;
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  canvas
-    .getContext("2d")
-    .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-
-  /** Code to merge image **/
-  /** For instance, if I want to merge a play image on center of existing image **/
-  const playImage = new Image();
-  playImage.src = "path to image asset";
-  playImage.onload = () => {
-    const startX = video.videoWidth / 2 - playImage.width / 2;
-    const startY = video.videoHeight / 2 - playImage.height / 2;
-    canvas
-      .getContext("2d")
-      .drawImage(playImage, startX, startY, playImage.width, playImage.height);
-    canvas.toBlob = (blob) => {
-      const img = new Image();
-      img.src = window.URL.createObjectUrl(blob);
-      bloba = blob;
-    };
-  };
-  return bloba;
   /** End **/
 }
 
