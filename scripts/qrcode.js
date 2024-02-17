@@ -28,6 +28,7 @@ function qrCodeFun(img) {
     // clearInterval(interValStream);
     // interValStream = null;
     alert(utf8.decode(res));
+    alert(1);
   });
 }
 async function startSteam() {
