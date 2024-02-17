@@ -1,3 +1,7 @@
+* {
+  -webkit-user-drag: none;
+  user-select: none;
+}
 .u-section-1 .u-sheet-1 {
   min-height: 225px;
 }
@@ -186,7 +190,8 @@
   .u-section-1 .u-table-cell-4 {
     font-size: 0.75rem;
   }
-}.u-section-2 .u-sheet-1 {
+}
+.u-section-2 .u-sheet-1 {
   min-height: 801px;
 }
 
@@ -703,7 +708,8 @@
   .u-section-2 .u-sheet-1 {
     min-height: 840px;
   }
-}.u-section-3 .u-sheet-1 {
+}
+.u-section-3 .u-sheet-1 {
   min-height: 219px;
 }
 

@@ -4,6 +4,7 @@
  * Copyright 2014-2021 Froala Labs
  */
  * {
+  -webkit-user-drag: none;
   user-select: none;
 }
 .fr-clearfix::after {

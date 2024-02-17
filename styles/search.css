@@ -1,4 +1,8 @@
- .u-section-1 {
+* {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.u-section-1 {
   background-image: none;
 }
 

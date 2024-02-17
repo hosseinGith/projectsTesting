@@ -14,15 +14,13 @@
   text-decoration: none;
   list-style: none;
   font-family: vazir;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(
-    #b3acac 0 40%,
-    #fff 40% 90%,
-    #e6e8eb 90% 100%
-  );
+  background-image: linear-gradient(#b3acac 0 40%, #fff 40% 90%, #e6e8eb 90% 100%);
 }
 
 .container {
