@@ -1,6 +1,13 @@
-// function decodeQrCode(img) {
-//   QCodeDecoder().decodeFromImage(img, function (er, res) {
-//     console.log(utf8.decode(res));
-//   });
-// }
-// decodeQrCode((new Image().src = "./assets/images/url.png"));
+const plusMinusBtnsBtn = document.querySelectorAll(".plusMinusBtnsCont button");
+const plusMinusBtnsInput = document.querySelector(".plusMinusBtnsCont input");
+
+plusMinusBtnsBtn.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    if (item.id === "minus") {
+      if (plusMinusBtnsInput.value <= 1) return;
+      plusMinusBtnsInput.value = Number(plusMinusBtnsInput.value) - 1;
+    } else if (item.id === "plus") {
+      plusMinusBtnsInput.value = Number(plusMinusBtnsInput.value) + 1;
+    }
+  });
+});

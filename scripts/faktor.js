@@ -1,1 +1,1 @@
-print();
+printJS("sectionPrint", "html");

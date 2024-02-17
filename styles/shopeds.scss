@@ -189,6 +189,7 @@ main {
         max-height: 65vh;
         width: 100%;
         overflow-y: auto;
+        padding: 10px 0;
         .item {
           display: flex;
           align-items: start;
@@ -303,6 +304,9 @@ main {
             }
           }
         }
+      }
+      .products::-webkit-scrollbar {
+        width: 0;
       }
     }
   }
