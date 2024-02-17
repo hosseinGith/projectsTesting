@@ -18,7 +18,11 @@
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(#b3acac 0 40%, #fff 40% 90%, #e6e8eb 90% 100%);
+  background-image: linear-gradient(
+    #b3acac 0 40%,
+    #fff 40% 90%,
+    #e6e8eb 90% 100%
+  );
 }
 
 .container {
@@ -159,6 +163,7 @@ footer .shopedsCont img {
   width: 100%;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=home.css.map */
