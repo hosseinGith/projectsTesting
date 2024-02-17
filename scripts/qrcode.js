@@ -25,7 +25,8 @@ scanCloseBtn.addEventListener("click", () => {
 function qrCodeFun(img) {
   QCodeDecoder().decodeFromImage(img, function (er, res) {
     alert(utf8.decode(res));
-    document.querySelector("#streamVideo").remove();
+    document.querySelector("#reader").style.display = "none";
+    document.querySelector("#reader video").remove();
     clearInterval(interValStream);
     interValStream = null;
   });
