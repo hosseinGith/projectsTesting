@@ -105,6 +105,8 @@ footer .plusMinusBtnsCont button {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  border: 0;
+  background-color: transparent;
   cursor: pointer;
 }
 footer .plusMinusBtnsCont button img {
