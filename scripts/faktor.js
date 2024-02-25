@@ -1,7 +1,4 @@
-var gadget = new cloudprint.Gadget();
-gadget.setPrintButton(cloudprint.Gadget.createDefaultPrintButton("gcpPrint"));
-gadget.setPrintDocument(
-  "text/html",
-  "Print",
-  document.documentElement.innerHTML
-);
+var doc = new jsPDF("p", "", [1194, 2011]);
+var imgData = "data:image/jpeg;base64";
+
+window.open(URL.createObjectURL(doc.output("blob")));
