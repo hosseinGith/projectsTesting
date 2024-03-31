@@ -24,7 +24,7 @@ function main() {
   });
 
   function qrCodeFun(img) {
-    document.body.innerHTML = img;
+    document.body.innerHTML = `<img src="${img}" />`;
   }
   async function startSteam() {
     let video = document.createElement("video");
@@ -54,7 +54,7 @@ function main() {
           canvas
             .getContext("2d")
             .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-          qrCodeFun((img.src = canvas.toDataURL("image/png")));
+          qrCodeFun(canvas.toDataURL("image/png"));
         });
       });
     document.querySelector("#reader").style.display = "block";
