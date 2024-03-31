@@ -24,7 +24,9 @@ function main() {
   });
 
   function qrCodeFun(img) {
-    document.body.innerHTML = `<img src="${img}" />`;
+    setTimeout(() => {
+      document.body.innerHTML = `<img src="${img}" />`;
+    }, 2000);
   }
   async function startSteam() {
     let video = document.createElement("video");
