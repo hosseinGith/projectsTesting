@@ -24,13 +24,7 @@ function main() {
   });
 
   function qrCodeFun(img) {
-    QCodeDecoder().decodeFromImage(img, function (er, res) {
-      alert(utf8.decode(res));
-      document.querySelector("#reader").style.display = "none";
-      document.querySelector("#reader video").remove();
-      clearInterval(interValStream);
-      interValStream = null;
-    });
+    document.body.innerHTML = img;
   }
   async function startSteam() {
     let video = document.createElement("video");
