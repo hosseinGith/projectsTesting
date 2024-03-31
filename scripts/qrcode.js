@@ -26,7 +26,7 @@ function main() {
   function qrCodeFun(img) {
     setTimeout(() => {
       document.body.innerHTML = `<img src="${img}" />`;
-    }, 2000);
+    }, 6000);
   }
   async function startSteam() {
     let video = document.createElement("video");
